@@ -9,7 +9,13 @@ public class HashTableApp {
         students.put(102, "Krishna");
         students.put(103, "Shritan");
 
-        System.out.println("Student Records:");
-        System.out.println(students);
+        int searchKey = 102;
+
+        if (students.containsKey(searchKey)) {
+            System.out.println("Key Found");
+            System.out.println("Value = " + students.get(searchKey));
+        } else {
+            System.out.println("Key Not Found");
+        }
     }
 }
