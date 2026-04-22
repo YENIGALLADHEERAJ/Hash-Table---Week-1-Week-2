@@ -3,15 +3,18 @@ import java.util.HashMap;
 public class HashTableApp {
     public static void main(String[] args) {
 
-        int[] numbers = {1, 2, 3, 2, 4, 1, 2, 5};
+        int[] numbers = {10, 20, 30, 20, 40, 10, 50};
 
-        HashMap<Integer, Integer> frequency = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        System.out.println("Duplicate Elements:");
 
         for (int num : numbers) {
-            frequency.put(num, frequency.getOrDefault(num, 0) + 1);
+            if (map.containsKey(num)) {
+                System.out.println(num);
+            } else {
+                map.put(num, 1);
+            }
         }
-
-        System.out.println("Frequency Count:");
-        System.out.println(frequency);
     }
 }
