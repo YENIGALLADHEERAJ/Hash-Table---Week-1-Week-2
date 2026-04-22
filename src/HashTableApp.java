@@ -1,20 +1,17 @@
 import java.util.HashMap;
-import java.util.Map;
 
 public class HashTableApp {
     public static void main(String[] args) {
 
-        HashMap<Integer, String> students = new HashMap<>();
+        int[] numbers = {1, 2, 3, 2, 4, 1, 2, 5};
 
-        students.put(101, "Dheeraj");
-        students.put(102, "Krishna");
-        students.put(103, "Shritan");
+        HashMap<Integer, Integer> frequency = new HashMap<>();
 
-        System.out.println("Student Records:");
-
-        for (Map.Entry<Integer, String> entry : students.entrySet()) {
-            System.out.println("Key = " + entry.getKey()
-                    + ", Value = " + entry.getValue());
+        for (int num : numbers) {
+            frequency.put(num, frequency.getOrDefault(num, 0) + 1);
         }
+
+        System.out.println("Frequency Count:");
+        System.out.println(frequency);
     }
 }
