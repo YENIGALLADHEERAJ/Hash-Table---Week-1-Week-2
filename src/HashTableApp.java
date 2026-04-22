@@ -9,13 +9,12 @@ public class HashTableApp {
         students.put(102, "Krishna");
         students.put(103, "Shritan");
 
-        int searchKey = 102;
+        System.out.println("Before Deletion:");
+        System.out.println(students);
 
-        if (students.containsKey(searchKey)) {
-            System.out.println("Key Found");
-            System.out.println("Value = " + students.get(searchKey));
-        } else {
-            System.out.println("Key Not Found");
-        }
+        students.remove(102);
+
+        System.out.println("After Deletion:");
+        System.out.println(students);
     }
 }
