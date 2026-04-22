@@ -3,18 +3,23 @@ import java.util.HashMap;
 public class HashTableApp {
     public static void main(String[] args) {
 
-        int[] numbers = {10, 20, 30, 20, 40, 10, 50};
+        int[] numbers = {2, 7, 11, 15};
+        int target = 9;
 
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        System.out.println("Duplicate Elements:");
+        for (int i = 0; i < numbers.length; i++) {
+            int complement = target - numbers[i];
 
-        for (int num : numbers) {
-            if (map.containsKey(num)) {
-                System.out.println(num);
-            } else {
-                map.put(num, 1);
+            if (map.containsKey(complement)) {
+                System.out.println("Pair Found:");
+                System.out.println(complement + " + " + numbers[i] + " = " + target);
+                return;
             }
+
+            map.put(numbers[i], i);
         }
+
+        System.out.println("No Pair Found");
     }
 }
