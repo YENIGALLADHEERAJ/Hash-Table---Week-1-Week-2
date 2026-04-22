@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Map;
 
 public class HashTableApp {
     public static void main(String[] args) {
@@ -9,12 +10,11 @@ public class HashTableApp {
         students.put(102, "Krishna");
         students.put(103, "Shritan");
 
-        System.out.println("Before Deletion:");
-        System.out.println(students);
+        System.out.println("Student Records:");
 
-        students.remove(102);
-
-        System.out.println("After Deletion:");
-        System.out.println(students);
+        for (Map.Entry<Integer, String> entry : students.entrySet()) {
+            System.out.println("Key = " + entry.getKey()
+                    + ", Value = " + entry.getValue());
+        }
     }
 }
