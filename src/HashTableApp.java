@@ -1,20 +1,38 @@
-import java.util.HashMap;
+class HashTableApp {
 
-public class HashTableApp {
+    static class HashTable {
+        String[] keys = new String[10];
+        String[] values = new String[10];
+
+        int hash(String key) {
+            return key.length() % 10;
+        }
+
+        void put(String key, String value) {
+            int index = hash(key);
+            keys[index] = key;
+            values[index] = value;
+        }
+
+        void get(String key) {
+            int index = hash(key);
+
+            if (keys[index] != null && keys[index].equals(key)) {
+                System.out.println("Value = " + values[index]);
+            } else {
+                System.out.println("Key not found");
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
-        HashMap<String, Boolean> users = new HashMap<>();
+        HashTable ht = new HashTable();
 
-        users.put("dheeraj", true);
-        users.put("krishna", true);
-        users.put("shritan", true);
+        ht.put("101", "Dheeraj");
+        ht.put("102", "Krishna");
+        ht.put("103", "Shritan");
 
-        String newUsername = "krishna";
-
-        if (users.containsKey(newUsername)) {
-            System.out.println("Username already taken");
-        } else {
-            System.out.println("Username available");
-        }
+        ht.get("102");
     }
 }
